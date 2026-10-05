@@ -1,0 +1,1575 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f0e8;
+    color: #2d2824;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: normal;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 5%;
+    background: #f5f0e8;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #2d2824;
+}
+
+.brand img {
+    width: 58px;
+    height: 46px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2d2824;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 80vh;
+    background: #e7ded2;
+}
+
+.hero-image {
+    min-height: 650px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8%;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.95;
+}
+
+.eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #9b5d4d;
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    width: fit-content;
+    padding: 14px 26px;
+    background: #332b27;
+    color: white;
+    text-decoration: none;
+}
+
+.section {
+    padding: 100px 7%;
+}
+
+.rug-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.rug-card img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.rug-card-text {
+    padding: 20px 0;
+}
+
+.services-section {
+    display: grid;
+    grid-template-columns: 0.8fr 1.7fr;
+    gap: 60px;
+    padding: 100px 7%;
+    background: #342c28;
+    color: white;
+}
+
+.restoration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.restoration-grid img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image img {
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.visit-section {
+    padding: 100px 7%;
+    text-align: center;
+    background: #faf7f1;
+}
+
+.visit-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    background: #292320;
+    color: white;
+}
+
+footer img {
+    width: 80px;
+    margin: 0 auto 15px;
+}
+
+@media (max-width: 900px) {
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero,
+    .services-section,
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    .rug-grid,
+    .restoration-grid,
+    .visit-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -----------------------------
+   SHOP PAGE
+----------------------------- */
+
+.shop-hero {
+    padding: 90px 7% 60px;
+    background: #ebe4da;
+}
+
+.shop-hero h1 {
+    margin-bottom: 20px;
+}
+
+.shop-hero p:last-child {
+    max-width: 600px;
+    color: #625950;
+}
+
+
+.shop-section {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 60px;
+    padding: 80px 7%;
+    background: #f5f0e8;
+}
+
+
+.filters {
+    align-self: start;
+    position: sticky;
+    top: 110px;
+}
+
+.filters h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.filters label {
+    display: block;
+    margin-top: 22px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.filters select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cfc5ba;
+    background: #fffdf8;
+    color: #2d2824;
+}
+
+.filter-button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #332b27;
+    background: transparent;
+    color: #332b27;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background: #332b27;
+    color: white;
+}
+
+
+.shop-results-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+}
+
+#result-count {
+    color: #746a62;
+    font-size: 0.9rem;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 28px;
+}
+
+
+.product-card img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.product-card img:hover {
+    transform: scale(1.015);
+}
+
+
+.product-card-content {
+    padding-top: 16px;
+}
+
+
+.product-origin {
+    margin-bottom: 6px;
+    color: #9b5d4d;
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+
+.product-card h2 {
+    margin-bottom: 7px;
+    font-size: 1.4rem;
+}
+
+
+.product-card h2 a {
+    color: #2d2824;
+    text-decoration: none;
+}
+
+
+.product-details {
+    margin-bottom: 8px;
+    color: #71675f;
+    font-size: 0.9rem;
+}
+
+
+.product-price {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+}
+
+
+.no-results {
+    grid-column: 1 / -1;
+    padding: 80px 20px;
+    text-align: center;
+    color: #71675f;
+}
+
+
+@media (max-width: 1000px) {
+
+    .shop-section {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        position: static;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ========================================
+   PRODUCT PAGE
+======================================== */
+
+.product-page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 50px 100px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 90px;
+
+    align-items: start;
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-page-image {
+    width: 100%;
+}
+
+.product-page-image img {
+    display: block;
+
+    width: 100%;
+    max-height: 780px;
+
+    object-fit: contain;
+
+    background: #eee8df;
+}
+
+
+/* PRODUCT INFORMATION */
+
+.product-page-info {
+    padding-top: 15px;
+}
+
+.product-back-link {
+    display: inline-block;
+
+    margin-bottom: 60px;
+
+    color: #655d56;
+
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.product-back-link:hover {
+    color: #2f2722;
+}
+
+
+.product-page-info .eyebrow {
+    margin-bottom: 18px;
+}
+
+
+.product-page-info h1 {
+    margin: 0 0 12px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+
+    color: #2f2722;
+}
+
+
+.product-page-design {
+    margin-bottom: 45px;
+
+    font-size: 17px;
+
+    color: #756c64;
+}
+
+
+/* SPECIFICATIONS */
+
+.product-specifications {
+    border-top: 1px solid #d5ccc1;
+
+    margin-bottom: 40px;
+}
+
+
+.product-spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #d5ccc1;
+
+    font-size: 14px;
+}
+
+
+.product-spec-row span {
+    color: #756c64;
+}
+
+
+.product-spec-row strong {
+    font-weight: 500;
+
+    color: #2f2722;
+
+    text-align: right;
+}
+
+
+/* PRICE */
+
+.product-page-price {
+    margin: 35px 0 12px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    color: #2f2722;
+}
+
+
+/* AVAILABILITY */
+
+.product-availability {
+    margin-bottom: 50px;
+
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #9a5d49;
+}
+
+
+/* INQUIRY */
+
+.product-inquiry {
+    padding-top: 35px;
+
+    border-top: 1px solid #d5ccc1;
+}
+
+
+.product-inquiry h2 {
+    margin-top: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    color: #2f2722;
+}
+
+
+.product-inquiry p {
+    max-width: 470px;
+
+    margin-bottom: 25px;
+
+    line-height: 1.7;
+
+    color: #655d56;
+}
+
+
+/* PRODUCT NOT FOUND */
+
+.product-not-found {
+    min-height: 500px;
+
+    padding: 120px 40px;
+
+    text-align: center;
+}
+
+
+.product-not-found h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+    font-weight: 400;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .product-page {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 40px 25px 70px;
+    }
+
+    .product-back-link {
+        margin-bottom: 35px;
+    }
+
+    .product-page-info h1 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* ========================================
+   SERVICES PAGE
+======================================== */
+
+
+/* SERVICES HERO */
+
+.services-page-hero {
+    padding: 100px 7% 90px;
+    text-align: center;
+    background: #ebe4da;
+}
+
+.services-page-hero h1 {
+    max-width: 850px;
+    margin: 15px auto 25px;
+
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.05;
+}
+
+.services-page-hero > p:last-child {
+    max-width: 750px;
+    margin: 0 auto;
+
+    color: #625950;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   CLEANING / SALES FEATURE SECTIONS
+======================================== */
+
+.service-feature {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    padding: 110px 50px;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.service-feature-text h2 {
+    margin: 12px 0 25px;
+
+    font-size: 2.5rem;
+    line-height: 1.15;
+}
+
+.service-feature-text > p:not(.eyebrow) {
+    color: #625950;
+    line-height: 1.8;
+}
+
+.service-feature-image img {
+    width: 100%;
+    height: 580px;
+
+    object-fit: cover;
+}
+
+
+/* TEXT LINKS */
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding-bottom: 3px;
+
+    color: #9b5d4d;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #9b5d4d;
+}
+
+.text-link:hover {
+    opacity: 0.65;
+}
+
+
+/* ========================================
+   SECOND CLEANING IMAGE
+======================================== */
+
+.service-wide-image {
+    max-width: 1200px;
+
+    margin: 0 auto 120px;
+
+    padding: 0 50px;
+}
+
+.service-wide-image img {
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+}
+
+
+/* ========================================
+   RESTORATION
+======================================== */
+
+.restoration-service {
+    padding: 110px 7%;
+
+    background: #342c28;
+    color: white;
+}
+
+.service-section-heading {
+    max-width: 720px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.service-section-heading h2 {
+    margin: 12px 0 22px;
+
+    font-size: 2.6rem;
+    line-height: 1.15;
+}
+
+.service-section-heading > p:last-child {
+    color: #ddd3ca;
+    line-height: 1.8;
+}
+
+
+.restoration-comparison {
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.restoration-comparison figure {
+    margin: 0;
+}
+
+.restoration-comparison img {
+    width: 100%;
+    height: 550px;
+
+    object-fit: cover;
+}
+
+.restoration-comparison figcaption {
+    margin-top: 12px;
+
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #d2c5bb;
+}
+
+.service-centered-link {
+    margin-top: 45px;
+
+    text-align: center;
+}
+
+.restoration-service .text-link {
+    color: #e2b19e;
+    border-color: #e2b19e;
+}
+
+
+/* ========================================
+   APPRAISALS
+======================================== */
+
+.appraisal-service {
+    padding: 120px 7%;
+
+    background: #faf7f1;
+
+    text-align: center;
+}
+
+.appraisal-service-inner {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.appraisal-service h2 {
+    margin: 12px 0 25px;
+
+    font-size: 2.6rem;
+    line-height: 1.15;
+}
+
+.appraisal-service-inner > p:not(.eyebrow) {
+    color: #625950;
+    line-height: 1.8;
+}
+
+.appraisal-service .button {
+    margin-top: 20px;
+}
+
+
+/* ========================================
+   RUG SALES
+======================================== */
+
+.service-feature-reverse {
+    grid-template-columns: 1.15fr 0.85fr;
+}
+
+.service-feature-reverse .service-feature-image {
+    order: 1;
+}
+
+.service-feature-reverse .service-feature-text {
+    order: 2;
+}
+
+
+/* ========================================
+   SERVICES CONTACT
+======================================== */
+
+.services-contact {
+    padding: 110px 7%;
+
+    background: #ebe4da;
+
+    text-align: center;
+}
+
+.services-contact h2 {
+    margin: 12px 0 20px;
+
+    font-size: 2.6rem;
+}
+
+.services-contact > p:not(.eyebrow) {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #625950;
+}
+
+
+.services-contact-details {
+    max-width: 1000px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.services-contact-details h3 {
+    font-size: 1.3rem;
+}
+
+.services-contact-details p {
+    color: #625950;
+}
+
+.services-contact-details a {
+    color: #2d2824;
+    text-decoration: none;
+}
+
+.services-contact-details a:hover {
+    color: #9b5d4d;
+}
+
+
+/* ========================================
+   SERVICES MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .services-page-hero {
+        padding: 70px 25px;
+    }
+
+
+    .service-feature,
+    .service-feature-reverse {
+        padding: 70px 25px;
+
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .service-feature-reverse .service-feature-image,
+    .service-feature-reverse .service-feature-text {
+        order: initial;
+    }
+
+    .service-feature-image img {
+        height: auto;
+    }
+
+
+    .service-wide-image {
+        margin-bottom: 80px;
+
+        padding: 0 25px;
+    }
+
+    .service-wide-image img {
+        height: auto;
+    }
+
+
+    .restoration-service {
+        padding: 80px 25px;
+    }
+
+    .restoration-comparison {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .restoration-comparison img {
+        height: auto;
+    }
+
+
+    .appraisal-service {
+        padding: 80px 25px;
+    }
+
+
+    .services-contact {
+        padding: 80px 25px;
+    }
+
+    .services-contact-details {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+}
+
+
+
+/* ========================================
+   PROGRAMS PAGE
+======================================== */
+
+
+/* HERO */
+
+.programs-hero {
+    padding: 110px 7% 90px;
+    background: #ebe4da;
+    text-align: center;
+}
+
+.programs-hero-text {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.programs-hero h1 {
+    margin: 15px auto 25px;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1;
+}
+
+.programs-hero-text > p:not(.eyebrow) {
+    max-width: 720px;
+    margin: 0 auto 35px;
+
+    color: #625950;
+    line-height: 1.8;
+}
+
+.programs-hero .button {
+    margin: 0 auto;
+}
+
+
+/* MAIN PROGRAM IMAGE */
+
+.programs-main-image {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding: 70px 7% 0;
+}
+
+.programs-main-image img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* INTRODUCTION */
+
+.programs-introduction {
+    max-width: 850px;
+
+    margin: 0 auto;
+    padding: 110px 30px;
+
+    text-align: center;
+}
+
+.programs-introduction h2 {
+    margin: 12px 0 25px;
+
+    font-size: 2.8rem;
+    line-height: 1.15;
+}
+
+.programs-introduction > p:last-child {
+    color: #625950;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   PROGRAM LIST
+======================================== */
+
+.program-list {
+    max-width: 1150px;
+
+    margin: 0 auto;
+    padding: 0 50px 120px;
+}
+
+
+.program-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 60px;
+
+    padding: 85px 0;
+
+    border-top: 1px solid #d5ccc1;
+}
+
+.program-item:last-child {
+    border-bottom: 1px solid #d5ccc1;
+}
+
+
+.program-number {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 4.5rem;
+    line-height: 1;
+
+    color: #c8b8aa;
+}
+
+
+.program-content {
+    max-width: 700px;
+}
+
+
+.program-content h2 {
+    margin: 12px 0 28px;
+
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.15;
+}
+
+
+.program-content > p:not(.eyebrow) {
+    color: #625950;
+    line-height: 1.85;
+}
+
+
+/* ========================================
+   PHILOSOPHY
+======================================== */
+
+.program-philosophy {
+    padding: 120px 7%;
+
+    background: #342c28;
+    color: white;
+
+    text-align: center;
+}
+
+
+.program-philosophy-inner {
+    max-width: 780px;
+
+    margin: 0 auto;
+}
+
+
+.program-philosophy h2 {
+    margin: 15px 0 25px;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+
+.program-philosophy-inner > p:last-child {
+    color: #ddd3ca;
+    line-height: 1.9;
+}
+
+
+.program-philosophy .eyebrow {
+    color: #d89b83;
+}
+
+
+/* ========================================
+   PROGRAM CONTACT
+======================================== */
+
+.program-contact {
+    padding: 120px 7%;
+
+    background: #faf7f1;
+
+    text-align: center;
+}
+
+
+.program-contact h2 {
+    margin: 12px 0 22px;
+
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+}
+
+
+.program-contact > p:not(.eyebrow) {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #625950;
+    line-height: 1.8;
+}
+
+
+.program-contact-actions {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.program-email-link {
+    color: #9b5d4d;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #9b5d4d;
+}
+
+
+.program-email-link:hover {
+    opacity: 0.65;
+}
+
+
+/* ========================================
+   PROGRAMS MOBILE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .programs-hero {
+        padding: 75px 25px 65px;
+    }
+
+
+    .programs-main-image {
+        padding: 40px 25px 0;
+    }
+
+
+    .programs-introduction {
+        padding: 80px 25px;
+    }
+
+
+    .program-list {
+        padding: 0 25px 80px;
+    }
+
+
+    .program-item {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 60px 0;
+    }
+
+
+    .program-number {
+        font-size: 3rem;
+    }
+
+
+    .program-philosophy {
+        padding: 85px 25px;
+    }
+
+
+    .program-contact {
+        padding: 85px 25px;
+    }
+
+
+    .program-contact-actions {
+        flex-direction: column;
+    }
+
+}
+
+
+
+/* ========================================
+   COFFÉ TORANGE
+======================================== */
+
+
+/* HERO */
+
+.coffe-hero {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+
+    min-height: 760px;
+
+    background: #e7ded2;
+}
+
+.coffe-hero-image {
+    min-height: 760px;
+    overflow: hidden;
+}
+
+.coffe-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.coffe-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 10%;
+}
+
+.coffe-hero h1 {
+    margin: 15px 0 25px;
+
+    font-size: clamp(4rem, 7vw, 7rem);
+    line-height: 0.95;
+}
+
+.coffe-hero-lead {
+    max-width: 480px;
+
+    margin-bottom: 35px;
+
+    color: #625950;
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   INTRODUCTION
+======================================== */
+
+.coffe-introduction {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 120px 30px;
+
+    text-align: center;
+}
+
+.coffe-introduction h2 {
+    margin: 12px 0 30px;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.15;
+}
+
+.coffe-introduction > p:not(.eyebrow) {
+    color: #625950;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   EXPERIENCE
+======================================== */
+
+.coffe-experience {
+    padding: 100px 7%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+
+    background: #faf7f1;
+}
+
+.coffe-experience-item {
+    padding: 20px 55px 40px;
+
+    border-right: 1px solid #d5ccc1;
+}
+
+.coffe-experience-item:first-child {
+    padding-left: 20px;
+}
+
+.coffe-experience-item:last-child {
+    border-right: none;
+}
+
+.coffe-number {
+    display: block;
+
+    margin-bottom: 60px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+
+    color: #c8b8aa;
+}
+
+.coffe-experience-item h2 {
+    margin: 10px 0 20px;
+
+    font-size: 2rem;
+}
+
+.coffe-experience-item > p:last-child {
+    color: #625950;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   STATEMENT
+======================================== */
+
+.coffe-statement {
+    padding: 140px 7%;
+
+    background: #342c28;
+    color: white;
+
+    text-align: center;
+}
+
+.coffe-statement-inner {
+    max-width: 850px;
+
+    margin: 0 auto;
+}
+
+.coffe-statement h2 {
+    margin: 15px 0 30px;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.05;
+}
+
+.coffe-statement-inner > p:last-child {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #ddd3ca;
+    line-height: 1.9;
+}
+
+.coffe-statement .eyebrow {
+    color: #d89b83;
+}
+
+
+/* ========================================
+   STUDENT / RESEARCHER SECTION
+======================================== */
+
+.coffe-community {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 130px 50px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.coffe-community-heading h2 {
+    margin: 12px 0 0;
+
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.05;
+}
+
+.coffe-community-text {
+    padding-top: 25px;
+}
+
+.coffe-community-text p {
+    color: #625950;
+
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+
+/* ========================================
+   VISIT
+======================================== */
+
+.coffe-visit {
+    padding: 110px 7%;
+
+    background: #ebe4da;
+
+    text-align: center;
+}
+
+.coffe-visit h2 {
+    margin: 12px 0 15px;
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.coffe-visit-intro {
+    color: #625950;
+}
+
+.coffe-visit-details {
+    max-width: 1000px;
+
+    margin: 65px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.coffe-visit-details h3 {
+    font-size: 1.4rem;
+}
+
+.coffe-visit-details p {
+    color: #625950;
+}
+
+.coffe-visit-details a {
+    color: #2d2824;
+    text-decoration: none;
+}
+
+.coffe-visit-details a:hover {
+    color: #9b5d4d;
+}
+
+
+/* ========================================
+   COFFÉ TORANGE MOBILE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .coffe-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .coffe-hero-image {
+        min-height: 450px;
+    }
+
+    .coffe-hero-content {
+        padding: 70px 25px;
+    }
+
+
+    .coffe-introduction {
+        padding: 80px 25px;
+    }
+
+
+    .coffe-experience {
+        padding: 70px 25px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .coffe-experience-item,
+    .coffe-experience-item:first-child {
+        padding: 45px 0;
+
+        border-right: none;
+        border-bottom: 1px solid #d5ccc1;
+    }
+
+    .coffe-experience-item:last-child {
+        border-bottom: none;
+    }
+
+    .coffe-number {
+        margin-bottom: 30px;
+    }
+
+
+    .coffe-statement {
+        padding: 90px 25px;
+    }
+
+
+    .coffe-community {
+        padding: 80px 25px;
+
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+
+    .coffe-visit {
+        padding: 80px 25px;
+    }
+
+    .coffe-visit-details {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+}

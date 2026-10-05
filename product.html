@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rug | Torange Rug Gallery</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            <img
+                src="images/logo/logo.png"
+                alt="Torange Rug Gallery logo"
+            >
+            <span>Torange Rug Gallery</span>
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="programs.html">Our Programs</a>
+            <a href="services.html">Services</a>
+            <a href="coffe-torange.html">Coffé Torange</a>
+            <a href="index.html#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="product-page">
+
+            <!-- LEFT: PRODUCT IMAGES -->
+
+            <div class="product-page-gallery">
+
+                <!-- MAIN IMAGE -->
+
+                <div class="product-page-image">
+
+                    <img
+                        id="product-image"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+                <!-- THUMBNAILS -->
+
+                <div
+                    id="product-thumbnails"
+                    class="product-thumbnails"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT: PRODUCT INFORMATION -->
+
+            <div class="product-page-info">
+
+                <a
+                    href="gallery.html"
+                    class="product-back-link"
+                >
+                    ← Back to Gallery
+                </a>
+
+
+                <p
+                    id="product-origin"
+                    class="eyebrow"
+                >
+                </p>
+
+
+                <h1 id="product-name">
+                </h1>
+
+
+                <p
+                    id="product-design"
+                    class="product-page-design"
+                >
+                </p>
+
+
+                <!-- SPECIFICATIONS -->
+
+                <div class="product-specifications">
+
+                    <div class="product-spec-row">
+                        <span>Origin</span>
+                        <strong id="spec-origin"></strong>
+                    </div>
+
+                    <div class="product-spec-row">
+                        <span>Design</span>
+                        <strong id="spec-design"></strong>
+                    </div>
+
+                    <div class="product-spec-row">
+                        <span>Material</span>
+                        <strong id="spec-material"></strong>
+                    </div>
+
+                    <div class="product-spec-row">
+                        <span>Size</span>
+                        <strong id="spec-size"></strong>
+                    </div>
+
+                    <div class="product-spec-row">
+                        <span>Product No.</span>
+                        <strong id="spec-id"></strong>
+                    </div>
+
+                </div>
+
+
+
+
+                <!-- AVAILABILITY -->
+
+                <p
+                    id="product-availability"
+                    class="product-availability"
+                >
+                </p>
+
+
+                <!-- INQUIRY -->
+
+                <div class="product-inquiry">
+
+                    <h2>
+                        Interested in this rug?
+                    </h2>
+
+                    <p>
+                        Contact Torange Rug Gallery for price, availability,
+                        additional photographs, or more information
+                        about this piece.
+                    </p>
+
+                    <a
+                        href="index.html#visit"
+                        class="button"
+                    >
+                        Contact Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT NOT FOUND -->
+
+        <section
+            id="product-not-found"
+            class="product-not-found"
+            hidden
+        >
+
+            <h1>
+                Rug not found
+            </h1>
+
+            <p>
+                We couldn't find the rug you're looking for.
+            </p>
+
+            <a
+                href="gallery.html"
+                class="button"
+            >
+                Return to Gallery
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <img
+            src="images/logo/logo.png"
+            alt="Torange Rug Gallery logo"
+        >
+
+        <p>
+            © 2026 Torange Rug Gallery
+        </p>
+
+    </footer>
+
+
+    <!-- PRODUCT DATA -->
+
+    <script src="products.js"></script>
+
+
+    <!-- PRODUCT PAGE LOGIC -->
+
+    <script>
+
+        /* ========================================
+           GET PRODUCT ID FROM URL
+        ======================================== */
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const productId =
+            params.get("id");
+
+
+        const product =
+            products.find(item => item.id === productId);
+
+
+        const productPage =
+            document.querySelector(".product-page");
+
+        const notFound =
+            document.getElementById("product-not-found");
+
+
+        /* ========================================
+           FORMAT PRICE
+        ======================================== */
+
+        function formatPrice(price) {
+
+            return new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "USD",
+                maximumFractionDigits: 0
+            }).format(price);
+
+        }
+
+
+        /* ========================================
+           PRODUCT NOT FOUND
+        ======================================== */
+
+        if (!product) {
+
+            productPage.style.display = "none";
+
+            notFound.hidden = false;
+
+        }
+
+
+        /* ========================================
+           PRODUCT FOUND
+        ======================================== */
+
+        else {
+
+            /* PAGE TITLE */
+
+            document.title =
+                `${product.name} | Torange Rug Gallery`;
+
+
+            /* ====================================
+               MAIN IMAGE
+            ==================================== */
+
+            const productImage =
+                document.getElementById("product-image");
+
+
+            productImage.src =
+                product.images[0];
+
+
+            productImage.alt =
+                product.name;
+
+
+            /* ====================================
+               IMAGE THUMBNAILS
+            ==================================== */
+
+            const thumbnailContainer =
+                document.getElementById("product-thumbnails");
+
+
+            product.images.forEach((image, index) => {
+
+                const thumbnailButton =
+                    document.createElement("button");
+
+
+                thumbnailButton.type = "button";
+
+                thumbnailButton.className =
+                    "product-thumbnail";
+
+
+                /*
+                    Mark the first photograph
+                    as the currently selected image.
+                */
+
+                if (index === 0) {
+
+                    thumbnailButton.classList.add("active");
+
+                }
+
+
+                const thumbnailImage =
+                    document.createElement("img");
+
+
+                thumbnailImage.src =
+                    image;
+
+
+                thumbnailImage.alt =
+                    `${product.name} photograph ${index + 1}`;
+
+
+                thumbnailButton.appendChild(
+                    thumbnailImage
+                );
+
+
+                /*
+                    Clicking a thumbnail changes
+                    the large product photograph.
+                */
+
+                thumbnailButton.addEventListener(
+                    "click",
+                    () => {
+
+                        productImage.src =
+                            image;
+
+
+                        const thumbnails =
+                            document.querySelectorAll(
+                                ".product-thumbnail"
+                            );
+
+
+                        thumbnails.forEach(
+                            thumbnail => {
+
+                                thumbnail.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        thumbnailButton.classList.add(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                thumbnailContainer.appendChild(
+                    thumbnailButton
+                );
+
+            });
+
+
+            /*
+                If the rug only has one photograph,
+                don't display a pointless thumbnail.
+            */
+
+            if (product.images.length <= 1) {
+
+                thumbnailContainer.style.display =
+                    "none";
+
+            }
+
+
+            /* ====================================
+               MAIN INFORMATION
+            ==================================== */
+
+            document.getElementById("product-origin")
+                .textContent =
+                product.origin;
+
+
+            document.getElementById("product-name")
+                .textContent =
+                product.name;
+
+
+            document.getElementById("product-design")
+                .textContent =
+                product.design;
+
+
+            /* ====================================
+               SPECIFICATIONS
+            ==================================== */
+
+            document.getElementById("spec-origin")
+                .textContent =
+                product.origin;
+
+
+            document.getElementById("spec-design")
+                .textContent =
+                product.design;
+
+
+            document.getElementById("spec-material")
+                .textContent =
+                product.material;
+
+
+            document.getElementById("spec-size")
+                .textContent =
+                product.size;
+
+
+            document.getElementById("spec-id")
+                .textContent =
+                product.id;
+
+
+            /* ====================================
+               AVAILABILITY
+            ==================================== */
+
+            document.getElementById(
+                "product-availability"
+            ).textContent =
+
+                product.available
+                    ? "Available"
+                    : "Sold";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
