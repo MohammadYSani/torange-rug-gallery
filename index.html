@@ -7,14 +7,19 @@
 
     <title>Torange Rug Gallery</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home-redesign.css">
+    <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
 
     <!-- HEADER -->
 
-    <header class="site-header">
+    <header class="site-header torange-header">
 
         <a href="index.html" class="brand">
             <img
@@ -24,13 +29,14 @@
             <span>Torange Rug Gallery</span>
         </a>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="gallery.html">Gallery</a>
             <a href="programs.html">Our Programs</a>
             <a href="services.html">Services</a>
             <a href="coffe-torange.html">Coffé Torange</a>
-            <a href="#">About</a>
+            <a href="index.html#about">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
     </header>
@@ -38,46 +44,34 @@
 
     <main>
 
-        <!-- HERO -->
-
-        <section id="home" class="hero">
-
-            <div class="hero-image">
-
-                <img
-                    src="images/gallery/gallery-interior.jpg"
-                    alt="Interior of Torange Rug Gallery"
-                >
-
+        <!-- BRAND-LED HERO -->
+        <section id="home" class="torange-hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <div class="hero-rule"><span>EST. IN TUCSON · ARIZONA</span></div>
+                <p class="hero-kicker">A GALLERY OF TEXTURE, TRADITION & TIME</p>
+                <div class="hero-emblem-wrap">
+                    <img class="hero-emblem" src="images/logo/logo.png" alt="Gold ornamental emblem of Torange Rug Gallery">
+                </div>
+                <h1 id="hero-title">Torange <em>Rug Gallery</em></h1>
+                <p class="hero-tagline">A world of rugs. A lifetime of stories.</p>
+                <p class="hero-description">Hand-selected rugs, enduring craftsmanship, and thoughtful care for the pieces that make a place your own.</p>
+                <div class="hero-actions">
+                    <a class="torange-button" href="gallery.html">Explore the Collection <span aria-hidden="true">↗</span></a>
+                    <a class="torange-text-button" href="#about">Our Story <span aria-hidden="true">→</span></a>
+                </div>
+                <div class="hero-bottom-ornament" aria-hidden="true"><span>✦</span></div>
             </div>
-
-
-            <div class="hero-content">
-
-                <p class="eyebrow">
-                    TORANGE RUG GALLERY
-                </p>
-
-                <h1>
-                    Rugs with a story to tell.
-                </h1>
-
-                <p class="hero-description">
-                    Distinctive rugs, timeless craftsmanship,
-                    and expert care for pieces made to last.
-                </p>
-
-                <a
-                    href="gallery.html"
-                    class="button"
-                >
-                    Explore the Collection
-                </a>
-
-            </div>
-
         </section>
-
+        <section class="gallery-intro" aria-label="Inside our gallery">
+            <div class="gallery-intro-image"><img src="images/gallery/gallery-interior.jpg" alt="Interior of Torange Rug Gallery" loading="lazy"></div>
+            <div class="gallery-intro-copy">
+                <span class="intro-number">01 / THE GALLERY</span>
+                <p class="eyebrow">THE ART OF LIVING WITH BEAUTY</p>
+                <h2>Every rug has <em>a story.</em></h2>
+                <p>From intricate traditional patterns to understated contemporary designs, discover pieces chosen for their beauty, character, and craft.</p>
+                <a class="torange-text-button" href="gallery.html">Discover our rugs <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
 
         <!-- COLLECTION PREVIEW -->
 
@@ -112,7 +106,6 @@
 
                     <img
                         src="images/rugs/TRG-001/main.jpg" alt="Traditional rug"
-                        alt="Traditional rug"
                     >
 
                     <div class="rug-card-text">
@@ -333,8 +326,6 @@
 
         <!-- VISIT -->
 
-        <!-- VISIT -->
-
         <section
             id="visit"
             class="visit-section"
@@ -421,6 +412,7 @@
                             torangeruggallery@gmail.com
                         </a>
                     </p>
+                    <p><a class="torange-contact-link" href="contact.html">Send Us a Message →</a></p>
 
                 </div>
 
@@ -433,7 +425,7 @@
 
     <!-- FOOTER -->
 
-    <footer>
+    <footer class="torange-footer">
 
         <img
             src="images/logo/logo.png"

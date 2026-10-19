@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Torange Rug Gallery</title>
+  <meta name="description" content="Contact Torange Rug Gallery in Tucson about rugs, cleaning, restoration, appraisals, and gallery visits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home-redesign.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <header class="site-header torange-header">
+    <a href="index.html" class="brand"><img src="images/logo/logo.png" alt="Torange Rug Gallery logo"><span>Torange Rug Gallery</span></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="programs.html">Our Programs</a>
+      <a href="services.html">Services</a>
+      <a href="coffe-torange.html">Coffé Torange</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+  <main class="contact-page">
+    <div class="contact-heading">
+      <p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p>
+      <h1>Let's talk about <em>your rug.</em></h1>
+      <p>Whether you're searching for a special piece, interested in restoration, or planning a visit, we'd be delighted to help.</p>
+    </div>
+    <div class="contact-layout">
+      <section class="contact-form-panel" aria-labelledby="form-heading">
+        <h2 id="form-heading">Send us a message</h2>
+        <p class="contact-hint">We'll get back to you as soon as we can.</p>
+        <!-- Formspree receives submissions; JavaScript shows an on-page confirmation. -->
+        <form action="https://formspree.io/f/mwlvzyyv" method="POST" id="torange-contact-form">
+          <div class="contact-field-row">
+            <label><span class="contact-label-text">Full name <span aria-hidden="true">*</span></span><input type="text" name="name" autocomplete="name" required maxlength="120"></label>
+            <label><span class="contact-label-text">Email address <span aria-hidden="true">*</span></span><input type="email" name="email" autocomplete="email" required maxlength="254"></label>
+          </div>
+          <label>What can we help you with?
+            <select name="inquiry_type">
+              <option value="General inquiry">General inquiry</option>
+              <option value="Rug availability">Rug availability</option>
+              <option value="Cleaning or restoration">Cleaning or restoration</option>
+              <option value="Appraisal">Appraisal</option>
+              <option value="Gallery visit">Gallery visit</option>
+            </select>
+          </label>
+          <label><span class="contact-label-text">Your message <span aria-hidden="true">*</span></span><textarea name="message" rows="6" required maxlength="5000" placeholder="Tell us a little about what you're looking for..."></textarea></label>
+          <input type="hidden" name="_subject" value="New Torange Rug Gallery inquiry">
+          <button class="contact-submit" type="submit">Send Message <span aria-hidden="true">↗</span></button>
+          <p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite" hidden></p>
+          <p class="contact-privacy">Your information will only be used to respond to your inquiry.</p>
+        </form>
+        <div id="contact-success" class="contact-success" tabindex="-1" hidden>
+          <div class="contact-success-symbol" aria-hidden="true">✓</div>
+          <h2>Thank you for reaching out!</h2>
+          <p>Your message has been sent successfully. We'll get back to you as soon as possible.</p>
+          <p class="contact-success-signature">— Torange Rug Gallery</p>
+          <button type="button" id="contact-another" class="contact-submit">Send another message ↗</button>
+        </div>
+      </section>
+      <aside class="contact-info-panel" aria-label="Gallery contact details">
+        <p class="eyebrow">VISIT TORANGE</p>
+        <h2>Find us in Tucson.</h2>
+        <h3>Address</h3><p>4818 E Speedway Blvd<br>Tucson, AZ 85712</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=4818+E+Speedway+Blvd+Tucson+AZ+85712" target="_blank" rel="noopener noreferrer">Get Directions →</a>
+        <h3>Hours</h3><p>Monday – Saturday<br>10 AM – 5 PM</p><p>Sunday: Closed</p>
+        <h3>Call or email</h3><p><a href="tel:+15205002240">(520) 500-2240</a></p><p><a href="mailto:torangeruggallery@gmail.com">torangeruggallery@gmail.com</a></p>
+      </aside>
+    </div>
+  </main>
+  <script src="contact.js" defer></script>
+  <footer class="torange-footer"><img src="images/logo/logo.png" alt="Torange Rug Gallery logo"><p>© 2026 Torange Rug Gallery</p></footer>
+</body>
+</html>

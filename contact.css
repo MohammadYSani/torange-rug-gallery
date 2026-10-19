@@ -1,0 +1,46 @@
+/* Contact page — uses Torange's existing design tokens */
+.contact-page{background:var(--tr-paper,#fbf7ef);color:var(--tr-dark,#282017);padding:75px clamp(22px,6vw,100px) 100px;min-height:70vh}
+.contact-heading{text-align:center;max-width:750px;margin:0 auto 55px}
+.contact-heading h1{font-size:clamp(52px,6vw,86px);line-height:1.04;margin:15px 0 20px}
+.contact-heading h1 em{color:#916d3e;font-weight:400}
+.contact-heading>p:last-child{color:#706254;font-size:16px;line-height:1.8}
+.contact-layout{max-width:1160px;margin:auto;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.85fr);gap:30px;align-items:stretch}
+.contact-form-panel{background:#fffaf2;border:1px solid rgba(142,104,55,.28);padding:clamp(25px,4vw,55px)}
+.contact-form-panel h2,.contact-info-panel h2{font-size:clamp(36px,3.5vw,52px);line-height:1.1;margin:0 0 12px}
+.contact-hint{font-size:15px;color:#706254;margin:0 0 28px}
+#torange-contact-form{display:flex;flex-direction:column;gap:20px}
+.contact-field-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+#torange-contact-form label{display:flex;flex-direction:column;gap:9px;font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:#514537}
+#torange-contact-form input,#torange-contact-form select,#torange-contact-form textarea{box-sizing:border-box;width:100%;font:400 15px 'DM Sans',sans-serif;letter-spacing:normal;text-transform:none;color:#282017;background:#fff;border:1px solid #cfc1ad;border-radius:4px;padding:14px 15px}
+#torange-contact-form textarea{resize:vertical;min-height:145px}
+#torange-contact-form input:focus-visible,#torange-contact-form select:focus-visible,#torange-contact-form textarea:focus-visible{outline:2px solid #a47b42;outline-offset:2px}
+.contact-submit{align-self:flex-start;cursor:pointer;background:#33281e;color:#fff9ec;border:1px solid #33281e;padding:16px 25px;font:600 12px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;transition:background .2s,transform .2s}
+.contact-submit:hover{background:#785630;transform:translateY(-2px)}
+.contact-privacy{font-size:12px;color:#706254;line-height:1.5;margin:0}
+.contact-info-panel{background:#35291f;color:#f9f0e4;padding:clamp(25px,4vw,55px)}
+.contact-info-panel .eyebrow{color:#c6a06a}
+.contact-info-panel h3{font-size:27px;margin:28px 0 8px}
+.contact-info-panel p{color:#e4d7c7;font-size:15px;line-height:1.8;margin:0 0 12px}
+.contact-info-panel a{color:#e5c595;overflow-wrap:anywhere}
+.torange-contact-link{display:inline-block;margin-top:10px;color:#d8b987!important;text-decoration:underline;text-underline-offset:5px}
+.torange-header nav a[aria-current="page"]{background:#e8d7be;border-color:#b89566;color:#38291f}
+@media(max-width:800px){.contact-layout{grid-template-columns:1fr}.contact-page{padding-top:55px}}
+@media(max-width:520px){.contact-field-row{grid-template-columns:1fr}.contact-submit{width:100%}}
+@media(prefers-reduced-motion:reduce){.contact-submit{transition:none}}
+
+/* Contact-page refinements */
+.contact-heading{max-width:1050px}
+.contact-heading h1{font-size:clamp(46px,5.3vw,76px);line-height:1.08;max-width:1000px;margin-left:auto;margin-right:auto;text-wrap:balance}
+.contact-heading h1 em{white-space:nowrap}
+#torange-contact-form .contact-label-text{display:inline;white-space:normal}
+#torange-contact-form .contact-label-text span{display:inline;color:#916d3e}
+#torange-contact-form label{display:flex;flex-direction:column;align-items:stretch}
+#torange-contact-form .contact-form-status{font-size:14px;line-height:1.5;margin:0;color:#8c372d;letter-spacing:normal;text-transform:none}
+#torange-contact-form .contact-form-status[hidden],.contact-success[hidden]{display:none!important}
+.contact-submit:disabled{opacity:.7;cursor:wait;transform:none}
+.contact-success{padding:12px 0 8px}
+.contact-success-symbol{display:grid;place-items:center;width:56px;height:56px;border:1px solid #b59465;border-radius:50%;font-size:27px;color:#916d3e;margin-bottom:24px}
+.contact-success h2{font-size:clamp(32px,3.2vw,46px);margin:0 0 16px}
+.contact-success p{font-size:16px;line-height:1.75;color:#706254;max-width:500px}
+.contact-success-signature{font-family:'Cormorant Garamond',serif;font-size:23px!important;color:#916d3e!important;margin:18px 0 28px}
+@media(max-width:520px){.contact-heading h1 em{white-space:normal}}

@@ -1,0 +1,35 @@
+/* Torange interior design system — loads after styles.css and home-redesign.css. */
+body.torange-interior{background:#fbf7ef;color:#282017;font-family:'DM Sans',Arial,sans-serif;font-size:15px;line-height:1.75}
+.torange-interior h1,.torange-interior h2,.torange-interior h3{font-family:'Cormorant Garamond',Georgia,serif;letter-spacing:-.025em;font-weight:500;line-height:1.08}
+.torange-interior p{line-height:1.85}
+.torange-interior .torange-header{position:relative;z-index:20;min-height:82px;padding:12px clamp(20px,4vw,76px);background:#fbf7ef;border-bottom:1px solid rgba(142,104,55,.22)}
+.torange-interior .torange-header .brand img{width:53px;height:53px;object-fit:cover;border-radius:50%}
+.torange-interior .torange-header .brand span{font-size:clamp(19px,2vw,26px)}
+.torange-interior .torange-header nav{gap:clamp(9px,1.5vw,24px)}
+.torange-interior .torange-header nav a{display:inline-block;padding:8px 10px;border-radius:5px;font-size:11px;letter-spacing:.075em;text-transform:uppercase;transition:background .2s,color .2s}
+.torange-interior .torange-header nav a:hover,.torange-interior .torange-header nav a:focus-visible{background:#efe2ce;color:#74522d}
+.torange-interior .eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#a47b42;font-weight:600}
+/* Compact, consistent interior introductions */
+.torange-interior .shop-hero,.torange-interior .programs-hero,.torange-interior .services-page-hero{padding:clamp(65px,7vw,105px) 7% clamp(60px,6vw,85px);background:#efe7db;text-align:center;border-bottom:1px solid rgba(142,104,55,.17)}
+.torange-interior .shop-hero h1,.torange-interior .programs-hero h1,.torange-interior .services-page-hero h1{font-size:clamp(49px,5.5vw,82px);line-height:1.01;max-width:1000px;margin:14px auto 20px}
+.torange-interior .shop-hero p:last-child,.torange-interior .programs-hero-text>p:not(.eyebrow),.torange-interior .services-page-hero>p:last-child{max-width:710px;margin:0 auto;color:#706254;font-size:15px;line-height:1.8}
+.torange-interior .programs-hero .button{margin-top:26px}
+.torange-interior .shop-section{background:#fbf7ef;padding:65px 6%;gap:42px}
+.torange-interior .shop-results{background:#fbf7ef}
+.torange-interior .shop-section h2,.torange-interior .shop-section h3{font-family:'Cormorant Garamond',Georgia,serif}
+.torange-interior .shop-section select,.torange-interior .shop-section input{font-family:'DM Sans',sans-serif}
+.torange-interior .programs-main-image{padding-top:55px}
+.torange-interior .service-feature,.torange-interior .restoration-service,.torange-interior .appraisal-service,.torange-interior .programs-introduction,.torange-interior .program-philosophy{background-color:#fbf7ef}
+/* Preserve the café's split-image layout while matching the site palette and type */
+.torange-interior .coffe-hero{min-height:620px;background:#efe7db}
+.torange-interior .coffe-hero-image{min-height:620px}
+.torange-interior .coffe-hero-content{padding:clamp(36px,6vw,95px)}
+.torange-interior .coffe-hero h1{font-size:clamp(64px,7.4vw,112px);line-height:.92}
+.torange-interior .coffe-hero-content p:not(.eyebrow){color:#706254}
+.torange-interior .product-page{padding-top:70px}
+.torange-interior .button,.torange-interior button[type=submit]{background:#342820;color:#fff;border:1px solid #342820;font-family:'DM Sans',sans-serif;transition:background .2s,transform .2s}
+.torange-interior .button:hover,.torange-interior button[type=submit]:hover{background:#6c4c2c;transform:translateY(-1px)}
+.torange-interior footer{background:#342820;color:#f8f0e5}
+.torange-interior footer a{color:#e4c591}
+@media(max-width:900px){.torange-interior .torange-header{flex-direction:column;gap:10px}.torange-interior .torange-header nav{justify-content:center}.torange-interior .shop-section{padding:48px 5%}.torange-interior .coffe-hero,.torange-interior .coffe-hero-image{min-height:0}}
+@media(max-width:600px){.torange-interior .torange-header nav a{font-size:10px;padding:6px}.torange-interior .shop-hero,.torange-interior .programs-hero,.torange-interior .services-page-hero{padding:58px 6%}.torange-interior .coffe-hero h1{font-size:clamp(55px,14vw,80px)}}
